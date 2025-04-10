@@ -46,6 +46,7 @@ export const pageQuery = graphql`
         about
         author
         github
+        bluesky
         linkedin
         projects {
           name
