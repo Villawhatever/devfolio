@@ -3,11 +3,11 @@ module.exports = {
     // Site URL for when it goes live
     siteUrl: `https://monumental-chimera-b1ace3.netlify.app/`,
     // Your Name
-    name: 'Andrew Villarrubia',
+    name: 'Andrew "Villa" Villarrubia',
     // Main Site Title
     title: `Andrew Villarrubia | Developer and Magic Judge`,
     // Description that goes under your name in main bio
-    description: `Fan of coding standards and card game rules.`,
+    description: `Fan of coding standards and card game rules`,
     // Optional: Twitter account handle
     author: null,
     // Optional: Github account URL
@@ -15,7 +15,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: null,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+    about: `Lego Mindstorm got me into programming when I was a kid, and I've been at it since.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
@@ -24,20 +24,39 @@ module.exports = {
           'A repo of "unofficial" official Magic rulings built on React and MongoDB',
         link: 'https://mtgmoleman.netlify.app/',
       },
+      {
+        name: 'Magic Comprehensive Rules for JudgeApps',
+        description:
+          `Parses the Magic comprehensive rules into a templated, hyperlinked WordPress-ified HTML page.`,
+        link: 'https://github.com/SethCurry/mtg-html-rules/tree/judgeapps-wordpress',
+      }
+
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
         name: 'Paylocity',
         description: 'Full-Stack Developer, December 2021 - Present',
-        link: null,
       },
       {
         name: 'Magic Judge',
         description: 'Level 2 (Judge Program), Level 3 (Judge Foundry), Feb 2017 - Present',
-        link: null,
       },
     ],
+    skills: [
+      {
+        name: 'Languages & Frameworks',
+        description: 'C#, Typescript, React, Go, Python',
+      },
+      {
+        name: 'Databases',
+        description: 'SQL, Mongo',
+      },
+      {
+        name: 'Other',
+        description: 'Docker, API design, Agile',
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
