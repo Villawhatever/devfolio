@@ -30,10 +30,12 @@ module.exports = {
       {
         name: 'Paylocity',
         description: 'Full-Stack Developer, December 2021 - Present',
+        link: null,
       },
       {
         name: 'Magic Judge',
         description: 'Level 2 (Judge Program), Level 3 (Judge Foundry), Feb 2017 - Present',
+        link: null,
       },
     ],
   },
