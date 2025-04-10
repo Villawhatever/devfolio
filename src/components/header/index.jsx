@@ -18,6 +18,7 @@ const classes = {
 const Header = ({ metadata = {}, noBlog = false }) => {
   const twitter = get(metadata, 'author', false);
   const github = get(metadata, 'github', false);
+  const bluesky = get(metadata, 'bluesky', false);
   const linkedin = get(metadata, 'linkedin', false);
 
   return (
@@ -53,6 +54,13 @@ const Header = ({ metadata = {}, noBlog = false }) => {
             <li className={classes.item}>
               <a className={classes.link} href={github}>
                 GitHub
+              </a>
+            </li>
+          )}
+          {bluesky && (
+            <li className={classes.item}>
+              <a className={classes.link} href={bluesky}>
+                Bluesky
               </a>
             </li>
           )}

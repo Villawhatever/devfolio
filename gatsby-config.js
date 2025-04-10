@@ -12,6 +12,7 @@ module.exports = {
     author: null,
     // Optional: Github account URL
     github: `https://github.com/Villawhatever`,
+    bluesky: `https://bsky.app/profile/villawhatever.bsky.social`,
     // Optional: LinkedIn account URL
     linkedin: null,
     // Content of the About Me section
