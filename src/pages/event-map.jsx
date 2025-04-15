@@ -90,12 +90,13 @@ export const pageQuery = graphql`
           id
           organizer
           date
-          type
+          name
           city {
             name
             coords
           }
           game
+          role
         }
       }
     }
