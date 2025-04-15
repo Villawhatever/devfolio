@@ -5,7 +5,7 @@ module.exports = {
     // Site URL for when it goes live
     siteUrl: `https://monumental-chimera-b1ace3.netlify.app/`,
     // Your Name
-    name: "Andrew "Villa" Villarrubia",
+    name: "Andrew \"Villa\" Villarrubia",
     // Main Site Title
     title: `Andrew Villarrubia | Developer and Magic Judge`,
     // Description that goes under your name in main bio
@@ -24,7 +24,7 @@ module.exports = {
       {
         name: "Moleman",
         description:
-          "A repo of "unofficial" official Magic rulings built on React and MongoDB",
+          "A repo of \"unofficial\" official Magic rulings built on React and MongoDB",
         link: "https://mtgmoleman.netlify.app/",
       },
       {
@@ -154,7 +154,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Your Site"s RSS Feed",
+            title: "Your Site's RSS Feed",
           },
         ],
       },
