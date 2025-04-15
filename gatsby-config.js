@@ -1,9 +1,11 @@
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+
 module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
     siteUrl: `https://monumental-chimera-b1ace3.netlify.app/`,
     // Your Name
-    name: 'Andrew "Villa" Villarrubia',
+    name: "Andrew "Villa" Villarrubia",
     // Main Site Title
     title: `Andrew Villarrubia | Developer and Magic Judge`,
     // Description that goes under your name in main bio
@@ -16,46 +18,46 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: null,
     // Content of the About Me section
-    about: `Lego Mindstorm got me into programming when I was a kid, and I've been at it since.`,
+    about: `Lego Mindstorm got me into programming when I was a kid, and I"ve been at it since.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Moleman',
+        name: "Moleman",
         description:
-          'A repo of "unofficial" official Magic rulings built on React and MongoDB',
-        link: 'https://mtgmoleman.netlify.app/',
+          "A repo of "unofficial" official Magic rulings built on React and MongoDB",
+        link: "https://mtgmoleman.netlify.app/",
       },
       {
-        name: 'Magic Comprehensive Rules for JudgeApps',
+        name: "Magic Comprehensive Rules for JudgeApps",
         description:
           `Parses the Magic comprehensive rules into a templated, hyperlinked WordPress-ified HTML page.`,
-        link: 'https://github.com/SethCurry/mtg-html-rules/tree/judgeapps-wordpress',
+        link: "https://github.com/SethCurry/mtg-html-rules/tree/judgeapps-wordpress",
       }
 
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
-        name: 'Paylocity',
-        description: 'Full-Stack Developer, December 2021 - Present',
+        name: "Paylocity",
+        description: "Full-Stack Developer, December 2021 - Present",
       },
       {
-        name: 'Magic Judge',
-        description: 'Level 2 (Judge Program), Level 3 (Judge Foundry), Feb 2017 - Present',
+        name: "Magic Judge",
+        description: "Level 2 (Judge Program), Level 3 (Judge Foundry), Feb 2017 - Present",
       },
     ],
     skills: [
       {
-        name: 'Languages & Frameworks',
-        description: 'C#, Typescript, React, Go, Python',
+        name: "Languages & Frameworks",
+        description: "C#, Typescript, React, Go, Python",
       },
       {
-        name: 'Databases',
-        description: 'SQL, Mongo',
+        name: "Databases",
+        description: "SQL, Mongo",
       },
       {
-        name: 'Other',
-        description: 'Docker, API design, Agile',
+        name: "Other",
+        description: "Docker, API design, Agile",
       }
     ]
   },
@@ -128,7 +130,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{ "content:encoded": edge.node.html }],
                 });
               });
             },
@@ -151,8 +153,8 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
-            title: "Your Site's RSS Feed",
+            output: "/rss.xml",
+            title: "Your Site"s RSS Feed",
           },
         ],
       },
@@ -174,6 +176,19 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },
+    },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString: process.env.MONGODB_CONNECTIONSTRING,
+        dbName: process.env.MONGODB_DBNAME,
+        collection: process.env.MONGODB_COLLECTION,
+        extraParams: {
+          ssl: true,
+          authSource: process.env.MONGODB_AUTHSOURCE,
+          retryWrites: true
+        }
+      }
     },
   ],
 };

@@ -64,9 +64,9 @@ The _Projects_ section is defined as an array under the `projects` key in the co
 
 ```js
 {
-  name: 'Devfolio', // Required
-  description: 'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS', // Required
-  link: 'https://github.com/RyanFitzgerald/devfolio', // Optional
+  name: "Devfolio", // Required
+  description: "A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS", // Required
+  link: "https://github.com/RyanFitzgerald/devfolio", // Optional
 }
 ```
 
@@ -76,9 +76,9 @@ The _Experience_ section is defined as an array under the `experience` key in th
 
 ```js
 {
-  name: 'Hooli', // Required
-  description: 'Full-Stack Developer, May 2015 - December 2017', // Required
-  link: 'https://github.com/RyanFitzgerald/devfolio', // Optional
+  name: "Hooli", // Required
+  description: "Full-Stack Developer, May 2015 - December 2017", // Required
+  link: "https://github.com/RyanFitzgerald/devfolio", // Optional
 },
 ```
 
@@ -88,14 +88,14 @@ The _Skills_ section is defined as an array under the `skills` key in the config
 
 ```js
 {
-  name: 'Languages & Frameworks',
-  description: 'JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP',
+  name: "Languages & Frameworks",
+  description: "JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP",
 },
 ```
 
 ## Setting Up The Blog
 
-The blog is an optional portion of the template and the content for it exists in the `content/blog` folder. All blog posts are written in Markdown by default and the template ships with a couple sample posts so you can get an idea of what's possible (i.e. syntax highlighting). If you'd rather not have a blog, simply delete the sample posts inside the folder while ensuring that the folder itself (`content/blog`) is kept as Gatsby still looks for it (you may also need to add `.gitkeep` to the folder so git recognizes it). If there are no posts in the folder, you will not see a Blog link at the top nor will you see the _Latest Posts_ section on the homepage. Once you add your first post, this will re-appear.
+The blog is an optional portion of the template and the content for it exists in the `content/blog` folder. All blog posts are written in Markdown by default and the template ships with a couple sample posts so you can get an idea of what"s possible (i.e. syntax highlighting). If you"d rather not have a blog, simply delete the sample posts inside the folder while ensuring that the folder itself (`content/blog`) is kept as Gatsby still looks for it (you may also need to add `.gitkeep` to the folder so git recognizes it). If there are no posts in the folder, you will not see a Blog link at the top nor will you see the _Latest Posts_ section on the homepage. Once you add your first post, this will re-appear.
 
 ### Adding a New Blog Post
 
@@ -106,20 +106,20 @@ Next, create an `index.md` file in the new folder with the following at the top 
 ```
 ---
 title: My Blog Title
-date: '2020-09-20T12:00:00.00Z'
-description: 'Some Short Blog Post Description'
+date: "2020-09-20T12:00:00.00Z"
+description: "Some Short Blog Post Description"
 ---
 
 My blog post starts here.
 ```
 
-The portion between both lines (`---`) is the metadata for the blog post. The `title` attribute is the post's title, the `date` is the date that shows on the blog post, and the `description` is a brief excerpt of the post that shows on the home page and the blog page for the post summary. Below the metadata is where the content of your blog post would start.
+The portion between both lines (`---`) is the metadata for the blog post. The `title` attribute is the post"s title, the `date` is the date that shows on the blog post, and the `description` is a brief excerpt of the post that shows on the home page and the blog page for the post summary. Below the metadata is where the content of your blog post would start.
 
-After that is done, you should now see you're latest blog post on your site (if you deploy or run it locally). One thing to keep in mind is that by default, the homepage will show only the latest 5 blog posts based on the `date` field entered. If you added a new blog post but it's not showing up, it's possible that you entered an older date by accident.
+After that is done, you should now see you"re latest blog post on your site (if you deploy or run it locally). One thing to keep in mind is that by default, the homepage will show only the latest 5 blog posts based on the `date` field entered. If you added a new blog post but it"s not showing up, it"s possible that you entered an older date by accident.
 
 ## Running Locally
 
-If you're happy with the current layout and design, you can simply edit your `gatsby-config.js` without the need to run it locally. With that said, if you want to spin it up locally, simply run `npm install` to install the required dependencies and then `npm run develop` to start the Gatsby development server. You can also run `npm run format` to run Prettier on the code.
+If you"re happy with the current layout and design, you can simply edit your `gatsby-config.js` without the need to run it locally. With that said, if you want to spin it up locally, simply run `npm install` to install the required dependencies and then `npm run develop` to start the Gatsby development server. You can also run `npm run format` to run Prettier on the code.
 
 ## Deploying
 
@@ -135,11 +135,11 @@ For the easiest setup possible, simply click:
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/RyanFitzgerald/devfolio"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Netlify"/></a>
 
-If you'd rather run through the steps manually, start by creating a free Netlify account with your GitHub.
+If you"d rather run through the steps manually, start by creating a free Netlify account with your GitHub.
 
 Next, click **New Site From Git** and click **GitHub** (or another) as the provider.
 
-After that, select the repository where you cloned this into. If you don't see it, you may need to configure the Netlify App on Github via the link they provide.
+After that, select the repository where you cloned this into. If you don"t see it, you may need to configure the Netlify App on Github via the link they provide.
 
 ![Netlify Step 2](https://user-images.githubusercontent.com/9112801/96353255-4bef9d00-1098-11eb-88ba-1ae7a4cec8d3.png)
 
@@ -157,7 +157,7 @@ As with Netlify, the deployment can be also done manually following identical se
 
 ### GitHub Pages
 
-If you'd like, you can setup a build pipeline fairly easily that allows you to use GitHub Pages. To find more information, [read this guide](https://www.gatsbyjs.com/docs/how-gatsby-works-with-github-pages/).
+If you"d like, you can setup a build pipeline fairly easily that allows you to use GitHub Pages. To find more information, [read this guide](https://www.gatsbyjs.com/docs/how-gatsby-works-with-github-pages/).
 
 ### Other
 
@@ -191,14 +191,14 @@ You can easily modify those pages and create new ones. Gatsby core automatically
 
 Devfolio is fully styled with [TailwindCSS](https://tailwindcss.com/) with the exception of a couple minor additional styles, as found in `src/css/index.css`.
 
-When the GatsbyJS development server is running, you'll have access to all of the Tailwind styles, however once you deploy (i.e. build the static assets), PurgeCSS runs against them and only leaves the Tailwind styles that were actually used. This is beneficial because it keeps the build size considerably smaller, however there are some important considerations to keep in mind in order to keep the HTML purgeable. For example, if you use string concatenation to create a class name, PurgeCSS won't be able to figure out what that is. For more information on writing purgeable HTML + other methods to control file size, [click here](https://tailwindcss.com/docs/controlling-file-size).
+When the GatsbyJS development server is running, you"ll have access to all of the Tailwind styles, however once you deploy (i.e. build the static assets), PurgeCSS runs against them and only leaves the Tailwind styles that were actually used. This is beneficial because it keeps the build size considerably smaller, however there are some important considerations to keep in mind in order to keep the HTML purgeable. For example, if you use string concatenation to create a class name, PurgeCSS won"t be able to figure out what that is. For more information on writing purgeable HTML + other methods to control file size, [click here](https://tailwindcss.com/docs/controlling-file-size).
 
 The pattern current used in the template when it comes to writing React components with Tailwind CSS is as follows:
 
 ```jsx
 const classes = {
-  wrapper: 'm-12 p-12',
-  text: 'text-lg text-gray-600 font-light',
+  wrapper: "m-12 p-12",
+  text: "text-lg text-gray-600 font-light",
 };
 
 const MyComponent = () => {
@@ -212,7 +212,7 @@ const MyComponent = () => {
 
 All the possible classes are defined above and just referenced in the `className` attribute of each element. This comes with a couple benefits:
 
-1. It keeps the overall component definition slightly cleaner (i.e. there isn't a huge class string)
+1. It keeps the overall component definition slightly cleaner (i.e. there isn"t a huge class string)
 2. You can reuse styles a little easier
 3. This still qualifies as purgeable HTML (assuming the class is actually used)
 

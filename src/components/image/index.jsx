@@ -1,5 +1,5 @@
-import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

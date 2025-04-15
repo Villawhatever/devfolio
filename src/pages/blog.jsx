@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby';
-import React from 'react';
+import { graphql } from "gatsby";
+import React from "react";
 
-import BlogPosts from '../components/blog-posts';
-import Header from '../components/header';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import NotFound from '../pages/404';
+import BlogPosts from "../components/blog-posts";
+import Header from "../components/header";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import NotFound from "../pages/404";
 
 const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -17,8 +17,8 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Blog" />
-      <Header metadata={data.site.siteMetadata} />
+      <Seo title="Blog" />
+      <Header metadata={data.site.siteMetadata} data={data} />
       {!noBlog && <BlogPosts posts={posts} />}
     </Layout>
   );
