@@ -3,7 +3,7 @@ import { get } from "lodash";
 import React from "react";
 
 import Header from "../components/header";
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 import SectionAbout from "../components/section-about";
 import SectionExperience from "../components/section-experience";
 import SectionProjects from "../components/section-projects";
