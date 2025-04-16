@@ -14,7 +14,7 @@ interface EventsFilter {
   city: string
 };
 
-const Index = ({ data }: TopLevelDataObject) => {
+const EventMap = ({ data }: TopLevelDataObject) => {
   const [allEvents, setAllEvents] = useState<JudgeEvent[]>([]);
   const [filtered, setFiltered] = useState<EventsFilter>({
     events: [],
@@ -65,7 +65,7 @@ const Index = ({ data }: TopLevelDataObject) => {
   );
 };
 
-export default Index;
+export default EventMap;
 
 export const pageQuery = graphql`
   query {

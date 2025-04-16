@@ -3,7 +3,7 @@ import React from "react";
 
 import BlogPosts from "../components/blog-posts";
 import Header from "../components/header";
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 import Seo from "../components/seo";
 import NotFound from "../pages/404";
 

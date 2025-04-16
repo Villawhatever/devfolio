@@ -23,4 +23,4 @@ const NotFoundPage = () => (
   </Layout>
 );
 
-export { NotFoundPage };
+export default NotFoundPage;
