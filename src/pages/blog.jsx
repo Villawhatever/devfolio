@@ -3,16 +3,16 @@ import React from "react";
 
 import BlogPosts from "../components/blog-posts";
 import Header from "../components/header";
-import { Layout } from "../components/layout";
+import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { NotFoundPage } from "../pages/404";
+import NotFound from "../pages/404";
 
 const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const noBlog = !posts || !posts.length;
 
   if (!posts || !posts.length) {
-    return <NotFoundPage />;
+    return <NotFound />;
   }
 
   return (
