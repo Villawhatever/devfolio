@@ -2,41 +2,50 @@ import { graphql } from "gatsby";
 import React, { useState, useEffect } from "react";
 
 import Header from "../components/header";
-import Layout from "../components/layout";
 import Seo from "../components/seo";
 import MapChart from "../components/event-map";
-import EventData from "../components/event";
+import { EventDisplay } from "../components/event";
+import { JudgeEvent } from "../types/events";
+import { TopLevelDataObject } from "../types/generic";
+import { Layout } from "../components/layout";
 
-const Index = ({ data }) => {
-  const [allEvents, setAllEvents] = useState([]);
-  const [filtered, setFiltered] = useState({
+interface EventsFilter {
+  events: JudgeEvent[],
+  city: string
+};
+
+const Index = ({ data }: TopLevelDataObject) => {
+  const [allEvents, setAllEvents] = useState<JudgeEvent[]>([]);
+  const [filtered, setFiltered] = useState<EventsFilter>({
     events: [],
     city: "",
-  })
+  });
 
-  const filterEvents = (city) => {
-    const filteredEvents = allEvents.filter((event) => {
+  const filterEvents = (city: string) => {
+    const filteredEvents = allEvents.filter((event: JudgeEvent) => {
       return (
-        event.node.city.name === city
+        event.city.name === city
       );
     });
     setFiltered({
-      events: filteredEvents.sort((a, b) => new Date(b.node.date) - new Date(a.node.date)),
+      events: filteredEvents.sort((a, b) => b.date.valueOf() - a.date.valueOf()),
       city: city,
     });
   };
 
   useEffect(() => {
-    setAllEvents(data.allMongodbVillawhateverEvents.edges);
+    const events = data.allMongodbVillawhateverEvents.edges.map((edge) => edge.node as JudgeEvent);
+    setAllEvents(events);
     setFiltered({
-      events: data.allMongodbVillawhateverEvents.edges.sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
+      events: events,
+      city: ""
     })
   }, [data.allMongodbVillawhateverEvents.edges]);
 
   return (
     <Layout>
       <Seo title="Event Map" />
-      <Header metadata={data.site.siteMetadata} data={data} />
+      <Header data={data} />
       <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <MapChart data={data} onClickCallback={filterEvents} />
         <div style={{ width: "30%", height: "300px", overflowY: "scroll" }}>
@@ -46,13 +55,13 @@ const Index = ({ data }) => {
             </div>
           }
           <div>
-            {filtered.events.map((event) => (
-              <EventData event={event.node} city={filtered.city} key={event.node.id} />
+            {filtered.events.map((event: JudgeEvent) => (
+              <EventDisplay event={event} city={filtered.city} key={event.id} />
             ))}
           </div>
         </div>
       </div>
-    </Layout >
+    </Layout>
   );
 };
 
@@ -72,7 +81,7 @@ export const pageQuery = graphql`
         linkedin
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date:  DESC }}) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC }}) {
       edges {
         node {
           excerpt
@@ -87,10 +96,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMongodbVillawhateverEvents {
+    allMongodbVillawhateverEvents(sort: { date: DESC }) {
       edges {
         node {
-          id
           organizer
           date
           name

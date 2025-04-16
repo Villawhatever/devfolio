@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import get from "lodash/get";
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { TopLevelDataObject } from "../types/generic";
 
 const classes = {
   wrapper: "block mb-6 md:flex",
@@ -15,11 +16,11 @@ const classes = {
   link: "inline-block py-2 font-semibold text-xs text-gray-600 hover:text-black",
 };
 
-const Header = ({ metadata = {}, data }) => {
-  const twitter = get(metadata, "author", false);
-  const github = get(metadata, "github", false);
-  const bluesky = get(metadata, "bluesky", false);
-  const linkedin = get(metadata, "linkedin", false);
+const Header = ({ data }: TopLevelDataObject) => {
+  const twitter = get(data.site.siteMetadata, "author", false);
+  const github = get(data.site.siteMetadata, "github", false);
+  const bluesky = get(data.site.siteMetadata, "bluesky", false);
+  const linkedin = get(data.site.siteMetadata, "linkedin", false);
 
   const posts = data.allMarkdownRemark.edges;
   const noBlog = !posts || !posts.length;
@@ -30,8 +31,8 @@ const Header = ({ metadata = {}, data }) => {
         <Link to="/">
           <StaticImage
             className={classes.image}
-            src="../../images/profile.jpg"
-            alt={metadata.name}
+            src="../images/profile.jpg"
+            alt={data.site.siteMetadata.name}
             placeholder="dominantColor"
             layout="fullWidth"
           />
@@ -39,9 +40,9 @@ const Header = ({ metadata = {}, data }) => {
       </div>
       <div className={classes.contentWrapper}>
         <h1 className={classes.name}>
-          <Link to="/">{metadata.name}</Link>
+          <Link to="/">{data.site.siteMetadata.name}</Link>
         </h1>
-        <p className={classes.description}>{metadata.description}</p>
+        <p className={classes.description}>{data.site.siteMetadata.description}</p>
         <ul className={classes.list}>
           {twitter && (
             <li className={classes.item}>

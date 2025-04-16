@@ -14,13 +14,13 @@ const NotFoundPage = () => (
     <Seo title="Not found" />
     <h1 className={classes.title}>404: Not Found</h1>
     <p>
-      You just hit a route that doesn"t exist.{" "}
+      Whatever you're looking for doesn't seem to exist.{" "}
       <Link className={classes.link} to="/">
-        Return to safety
+        Go home instead
       </Link>
       .
     </p>
   </Layout>
 );
 
-export default NotFoundPage;
+export { NotFoundPage };

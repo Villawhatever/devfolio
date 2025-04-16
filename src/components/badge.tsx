@@ -1,9 +1,9 @@
 import React from "react";
 
 const Badge = ({ text }) => {
-  const role = text.split(" ")[1]
-  console.log(role)
-  let color;
+  const role = text.split(" ")[1];
+  let color: string;
+
   switch (role) {
     case "HJ":
       color = "#0819a7";
@@ -22,12 +22,13 @@ const Badge = ({ text }) => {
     backgroundColor: color,
     color: "#ffffff",
     marginLeft: ".5em"
-  }
+  };
+
   return (
     <div style={style}>
       <b>{text}</b>
     </div>
-  )
+  );
 };
 
-export default Badge;
+export { Badge };

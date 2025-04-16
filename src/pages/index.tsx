@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import get from "lodash/get";
+import { get } from "lodash";
 import React from "react";
 
 import Header from "../components/header";
@@ -9,18 +9,19 @@ import SectionExperience from "../components/section-experience";
 import SectionProjects from "../components/section-projects";
 import SectionSkills from "../components/section-skills";
 import Seo from "../components/seo";
+import { TopLevelDataObject } from "../types/generic";
 
-const Index = ({ data }) => {
-  const about = get(data, "site.siteMetadata.about", false);
-  const projects = get(data, "site.siteMetadata.projects", false);
+const Index = ({ data }: TopLevelDataObject) => {
+  const about = get(data, "site.siteMetadata.about", "");
+  const projects = get(data, "site.siteMetadata.projects", []);
 
-  const experience = get(data, "site.siteMetadata.experience", false);
-  const skills = get(data, "site.siteMetadata.skills", false);
+  const experience = get(data, "site.siteMetadata.experience", []);
+  const skills = get(data, "site.siteMetadata.skills", []);
 
   return (
     <Layout>
-      <Seo />
-      <Header metadata={data.site.siteMetadata} data={data} />
+      <Seo title="" />
+      <Header data={data} />
       {about && <SectionAbout about={about} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
       {experience && experience.length && (

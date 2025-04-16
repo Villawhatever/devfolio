@@ -6,7 +6,7 @@ const classes = {
   svg: "hidden fixed transform right-0 top-5 z-0 xl:block",
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   return (
     <div className={classes.outerWrapper}>
       <svg
@@ -46,4 +46,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export { Layout };
