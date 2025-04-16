@@ -28,6 +28,9 @@ const Index = ({ data }) => {
 
   useEffect(() => {
     setAllEvents(data.allMongodbVillawhateverEvents.edges);
+    setFiltered({
+      events: data.allMongodbVillawhateverEvents.edges.sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
+    })
   }, [data.allMongodbVillawhateverEvents.edges]);
 
   return (
@@ -36,13 +39,13 @@ const Index = ({ data }) => {
       <Header metadata={data.site.siteMetadata} data={data} />
       <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <MapChart data={data} onClickCallback={filterEvents} />
-        <div style={{ width: "30%", height: "300px" }}>
+        <div style={{ width: "30%", height: "300px", overflowY: "scroll" }}>
           {filtered.city &&
             <div>
               <b>{filtered.city}</b>
             </div>
           }
-          <div style={{ overflowY: "scroll" }}>
+          <div>
             {filtered.events.map((event) => (
               <EventData event={event.node} city={filtered.city} key={event.node.id} />
             ))}

@@ -33,7 +33,6 @@ module.exports = {
           `Parses the Magic comprehensive rules into a templated, hyperlinked WordPress-ified HTML page.`,
         link: "https://github.com/SethCurry/mtg-html-rules/tree/judgeapps-wordpress",
       }
-
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
