@@ -19,4 +19,4 @@ const Section = ({ title, children }) => {
   );
 };
 
-export default Section;
+export { Section };

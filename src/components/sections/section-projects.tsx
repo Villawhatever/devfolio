@@ -1,9 +1,14 @@
 import React from "react";
 
-import Section from "../section";
-import SummaryItem from "../summary-item";
+import { Section } from "./section";
+import { SummaryItem } from "./summary-item";
+import { SectionItem } from "../../types/generic";
 
-const SectionProjects = ({ projects }) => {
+interface ProjectsProps {
+  projects: SectionItem[],
+};
+
+const SectionProjects = ({ projects }: ProjectsProps) => {
   if (!projects.length) return null;
 
   return (
@@ -20,4 +25,4 @@ const SectionProjects = ({ projects }) => {
   );
 };
 
-export default SectionProjects;
+export { SectionProjects };

@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { ReactElement } from "react";
 
 const classes = {
   wrapper: "mb-6",
@@ -7,8 +7,15 @@ const classes = {
   description: "text-md text-gray-600 font-light",
 };
 
-const SummaryItem = ({ name, description, link = false, internal = false }) => {
-  let linkContent;
+interface SummaryItemProps {
+  name: string,
+  description: string,
+  link?: string,
+  internal?: boolean,
+};
+
+const SummaryItem = ({ name, description, link = "", internal = false }: SummaryItemProps) => {
+  let linkContent: ReactElement;
   if (internal) {
     linkContent = <Link to={link}>{name}</Link>;
   } else {
@@ -28,4 +35,4 @@ const SummaryItem = ({ name, description, link = false, internal = false }) => {
   );
 };
 
-export default SummaryItem;
+export { SummaryItem };

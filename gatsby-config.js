@@ -18,7 +18,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: null,
     // Content of the About Me section
-    about: `Lego Mindstorm got me into programming when I was a kid, and I"ve been at it since.`,
+    about: `Lego Mindstorm got me into programming when I was a kid, and I've been at it since.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {

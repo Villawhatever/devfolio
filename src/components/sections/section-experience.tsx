@@ -1,9 +1,14 @@
 import React from "react";
 
-import Section from "../section";
-import SummaryItem from "../summary-item";
+import { Section } from "./section";
+import { SummaryItem } from "./summary-item";
+import { SectionItem } from "../../types/generic";
 
-const SectionExperience = ({ experience }) => {
+interface ExperienceProps {
+  experience: SectionItem[],
+};
+
+const SectionExperience = ({ experience }: ExperienceProps) => {
   if (!experience.length) return null;
 
   return (
@@ -20,4 +25,4 @@ const SectionExperience = ({ experience }) => {
   );
 };
 
-export default SectionExperience;
+export { SectionExperience };

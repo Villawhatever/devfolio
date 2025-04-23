@@ -1,4 +1,3 @@
-import { AllMarkdownRemark } from "./blog-posts";
 import { AllMongodbVillawhateverEvents } from "./events";
 
 export interface TopLevelDataObject {
@@ -7,7 +6,6 @@ export interface TopLevelDataObject {
 
 export interface Data {
   allMongodbVillawhateverEvents: AllMongodbVillawhateverEvents,
-  allMarkdownRemark: AllMarkdownRemark,
   site: Site,
 };
 
@@ -27,9 +25,15 @@ export interface SiteMetadata {
 };
 
 export interface Edge {
-  node: Node
+  node: Node,
 };
 
 export interface Node {
   id: string,
+};
+
+export interface SectionItem {
+  name: string,
+  description: string,
+  link: string,
 };
