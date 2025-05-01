@@ -1,7 +1,7 @@
 import React from "react";
 
 const Badge = ({ text }) => {
-  const role = text.split(" ")[1];
+  const role = text.split(" ").pop();
   let color: string;
 
   switch (role) {
