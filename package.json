@@ -27,6 +27,7 @@
     "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
     "lodash": "^4.17.21",
+    "mana-font": "^1.18.0",
     "moment": "^2.29.4",
     "mongodb": "^6.15.0",
     "postcss": "^8.4.31",

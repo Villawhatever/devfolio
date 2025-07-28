@@ -8,10 +8,23 @@ interface EventDisplayProps {
 };
 
 const EventDisplay = (props: EventDisplayProps) => {
+  let gameIcon;
+  switch (props.event.game) {
+    case "Magic: the Gathering":
+      gameIcon = <i className="ms ms-planeswalker" />;
+      break;
+    case "Lorcana":
+      gameIcon = <i className="ms ms-counter-stun" />
+      break
+  }
+
   return <div style={{ margin: "1em 0" }}>
+    {props.event.game && gameIcon}
     <b>{props.event.name}</b>
     {props.event.role &&
-      <Badge text={props.event.role} />
+      <>
+        <br /><Badge text={props.event.role} />
+      </>
     }
     <p>{!props.city && props.event.city.name} {new Date(props.event.date).toLocaleDateString()}</p>
   </div>

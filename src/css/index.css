@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("//cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css");
 
 @layer base {
   .blog-content {
@@ -133,13 +134,13 @@ pre[class*="language-"] {
   border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre)>code[class*="language-"],
 pre[class*="language-"] {
   background: #1d1f21;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre)>code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
