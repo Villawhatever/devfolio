@@ -22,6 +22,12 @@ module.exports = {
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
+        name: "Pocket Judge",
+        description:
+          "A Riftbound judge-focused app for quick access to and searchability of the Core Rules and Tournament Rules",
+        link: "https://github.com/Villawhatever/pocket-judge",
+      },
+      {
         name: "Moleman",
         description:
           "A repo of \"unofficial\" official Magic rulings built on React and MongoDB",
@@ -30,7 +36,7 @@ module.exports = {
       {
         name: "Magic Comprehensive Rules for JudgeApps",
         description:
-          `Parses the Magic comprehensive rules into a templated, hyperlinked WordPress-ified HTML page.`,
+          `A parser to convert the Magic comprehensive rules into a templated, hyperlinked WordPress-ified HTML page`,
         link: "https://github.com/SethCurry/mtg-html-rules/tree/judgeapps-wordpress",
       }
     ],
