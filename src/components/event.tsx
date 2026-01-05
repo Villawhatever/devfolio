@@ -11,11 +11,14 @@ const EventDisplay = (props: EventDisplayProps) => {
   let gameIcon;
   switch (props.event.game) {
     case "Magic: the Gathering":
-      gameIcon = <i className="ms ms-planeswalker" />;
+      gameIcon = <i className="ms ms-dfc-ignite" />;
       break;
     case "Lorcana":
-      gameIcon = <i className="ms ms-counter-stun" />
-      break
+      gameIcon = <i className="ms ms-dfc-enchantment" />;
+      break;
+    case "Riftbound":
+      gameIcon = <i className="ms ms-dfc-day" />;
+      break;
   }
 
   return <div style={{ margin: "1em 0" }}>
